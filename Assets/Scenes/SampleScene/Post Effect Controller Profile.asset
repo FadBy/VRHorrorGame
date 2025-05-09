@@ -1,0 +1,408 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7263460712780211836
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97c23e3b12dc18c42a140437e53d3951, type: 3}
+  m_Name: Tonemapping
+  m_EditorClassIdentifier: 
+  active: 0
+  mode:
+    m_OverrideState: 1
+    m_Value: 0
+  neutralHDRRangeReductionMode:
+    m_OverrideState: 0
+    m_Value: 2
+  acesPreset:
+    m_OverrideState: 0
+    m_Value: 3
+  hueShiftAmount:
+    m_OverrideState: 0
+    m_Value: 0
+  detectPaperWhite:
+    m_OverrideState: 0
+    m_Value: 0
+  paperWhite:
+    m_OverrideState: 0
+    m_Value: 300
+  detectBrightnessLimits:
+    m_OverrideState: 0
+    m_Value: 1
+  minNits:
+    m_OverrideState: 0
+    m_Value: 0.005
+  maxNits:
+    m_OverrideState: 0
+    m_Value: 1000
+--- !u!114 &-5677941076521918151
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2263087dfabaff242bd2275b6eb2559d, type: 3}
+  m_Name: MyFog
+  m_EditorClassIdentifier: 
+  active: 1
+  fogColor:
+    m_OverrideState: 1
+    m_Value: {r: 0, g: 0, b: 0, a: 1}
+--- !u!114 &-4735333079940165717
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29fa0085f50d5e54f8144f766051a691, type: 3}
+  m_Name: FilmGrain
+  m_EditorClassIdentifier: 
+  active: 1
+  type:
+    m_OverrideState: 1
+    m_Value: 1
+  intensity:
+    m_OverrideState: 1
+    m_Value: 0.522
+  response:
+    m_OverrideState: 1
+    m_Value: 0.268
+  texture:
+    m_OverrideState: 0
+    m_Value: {fileID: 0}
+--- !u!114 &-4336695474361045112
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7504f3a65673eb449ef6d0e071829d4, type: 3}
+  m_Name: CustomVolumeComponent
+  m_EditorClassIdentifier: 
+  active: 0
+  colorParameter:
+    m_OverrideState: 1
+    m_Value: {r: 4.867144, g: 4.867144, b: 4.867144, a: 1}
+  offset:
+    m_OverrideState: 1
+    m_Value: 0.0036
+  frequency:
+    m_OverrideState: 1
+    m_Value: 185.1
+  stripeSpeed:
+    m_OverrideState: 1
+    m_Value: 1
+--- !u!114 &-1030965944788418986
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 221518ef91623a7438a71fef23660601, type: 3}
+  m_Name: WhiteBalance
+  m_EditorClassIdentifier: 
+  active: 1
+  temperature:
+    m_OverrideState: 1
+    m_Value: 17
+  tint:
+    m_OverrideState: 0
+    m_Value: -64.8
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7fd9488000d3734a9e00ee676215985, type: 3}
+  m_Name: Post Effect Controller Profile
+  m_EditorClassIdentifier: 
+  components:
+  - {fileID: 7091352007134007463}
+  - {fileID: 1661481233379248774}
+  - {fileID: 6850354417459169043}
+  - {fileID: 4172611615407859998}
+  - {fileID: -4735333079940165717}
+  - {fileID: -7263460712780211836}
+  - {fileID: 1932430539825664770}
+  - {fileID: -1030965944788418986}
+  - {fileID: 1337373833913919261}
+  - {fileID: -5677941076521918151}
+  - {fileID: 1008327732483662323}
+--- !u!114 &1008327732483662323
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7504f3a65673eb449ef6d0e071829d4, type: 3}
+  m_Name: MyCrt
+  m_EditorClassIdentifier: 
+  active: 1
+  colorParameter:
+    m_OverrideState: 1
+    m_Value: {r: 1, g: 1, b: 1, a: 1}
+  offset:
+    m_OverrideState: 1
+    m_Value: 0.002
+  frequency:
+    m_OverrideState: 1
+    m_Value: 10
+  stripeSpeed:
+    m_OverrideState: 1
+    m_Value: 10
+--- !u!114 &1337373833913919261
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdfbdbb87d3286943a057f7791b43141, type: 3}
+  m_Name: ChannelMixer
+  m_EditorClassIdentifier: 
+  active: 1
+  redOutRedIn:
+    m_OverrideState: 1
+    m_Value: 119
+  redOutGreenIn:
+    m_OverrideState: 1
+    m_Value: -13
+  redOutBlueIn:
+    m_OverrideState: 1
+    m_Value: 0
+  greenOutRedIn:
+    m_OverrideState: 0
+    m_Value: 0
+  greenOutGreenIn:
+    m_OverrideState: 0
+    m_Value: 100
+  greenOutBlueIn:
+    m_OverrideState: 0
+    m_Value: 0
+  blueOutRedIn:
+    m_OverrideState: 0
+    m_Value: 0
+  blueOutGreenIn:
+    m_OverrideState: 0
+    m_Value: 0
+  blueOutBlueIn:
+    m_OverrideState: 0
+    m_Value: 100
+--- !u!114 &1661481233379248774
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b2db86121404754db890f4c8dfe81b2, type: 3}
+  m_Name: Bloom
+  m_EditorClassIdentifier: 
+  active: 1
+  skipIterations:
+    m_OverrideState: 0
+    m_Value: 1
+  threshold:
+    m_OverrideState: 1
+    m_Value: 1.01
+  intensity:
+    m_OverrideState: 1
+    m_Value: 1.26
+  scatter:
+    m_OverrideState: 1
+    m_Value: 0.7
+  clamp:
+    m_OverrideState: 0
+    m_Value: 65472
+  tint:
+    m_OverrideState: 0
+    m_Value: {r: 1, g: 1, b: 1, a: 1}
+  highQualityFiltering:
+    m_OverrideState: 0
+    m_Value: 0
+  downscale:
+    m_OverrideState: 0
+    m_Value: 0
+  maxIterations:
+    m_OverrideState: 0
+    m_Value: 6
+  dirtTexture:
+    m_OverrideState: 0
+    m_Value: {fileID: 0}
+    dimension: 1
+  dirtIntensity:
+    m_OverrideState: 0
+    m_Value: 0
+--- !u!114 &1932430539825664770
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5485954d14dfb9a4c8ead8edb0ded5b1, type: 3}
+  m_Name: LiftGammaGain
+  m_EditorClassIdentifier: 
+  active: 0
+  lift:
+    m_OverrideState: 1
+    m_Value: {x: 1, y: 0.9550702, z: 0.94135, w: -0.021074735}
+  gamma:
+    m_OverrideState: 1
+    m_Value: {x: 1, y: 0.94187975, z: 0.95327926, w: 0.21074817}
+  gain:
+    m_OverrideState: 1
+    m_Value: {x: 1, y: 0.96605587, z: 0.97289824, w: 0.01053742}
+--- !u!114 &4172611615407859998
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5e1dc532bcb41949b58bc4f2abfbb7e, type: 3}
+  m_Name: LensDistortion
+  m_EditorClassIdentifier: 
+  active: 1
+  intensity:
+    m_OverrideState: 1
+    m_Value: 0.019
+  xMultiplier:
+    m_OverrideState: 0
+    m_Value: 0.349
+  yMultiplier:
+    m_OverrideState: 0
+    m_Value: 0.455
+  center:
+    m_OverrideState: 0
+    m_Value: {x: 0.7, y: 0.5}
+  scale:
+    m_OverrideState: 0
+    m_Value: 2.33
+--- !u!114 &6850354417459169043
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81180773991d8724ab7f2d216912b564, type: 3}
+  m_Name: ChromaticAberration
+  m_EditorClassIdentifier: 
+  active: 1
+  intensity:
+    m_OverrideState: 1
+    m_Value: 0.228
+--- !u!114 &7091352007134007463
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4265a041954897941afec871c608473b, type: 3}
+  m_Name: Crt
+  m_EditorClassIdentifier: 
+  active: 0
+  scanlinesWeight:
+    m_OverrideState: 1
+    m_Value: -0.29
+  noiseWeight:
+    m_OverrideState: 1
+    m_Value: 1.11
+  screenBendX:
+    m_OverrideState: 0
+    m_Value: -17.7
+  screenBendY:
+    m_OverrideState: 0
+    m_Value: 955.9
+  vignetteAmount:
+    m_OverrideState: 0
+    m_Value: -0
+  vignetteSize:
+    m_OverrideState: 0
+    m_Value: 0
+  vignetteRounding:
+    m_OverrideState: 0
+    m_Value: 0
+  vignetteSmoothing:
+    m_OverrideState: 0
+    m_Value: 0
+  scanlinesDensity:
+    m_OverrideState: 0
+    m_Value: 149.92
+  scanlinesSpeed:
+    m_OverrideState: 0
+    m_Value: -35.2
+  noiseAmount:
+    m_OverrideState: 0
+    m_Value: 236.33
+  chromaticRed:
+    m_OverrideState: 0
+    m_Value: {x: 129.4, y: 15.9}
+  chromaticGreen:
+    m_OverrideState: 0
+    m_Value: {x: 22, y: 1.53}
+  chromaticBlue:
+    m_OverrideState: 0
+    m_Value: {x: 8.28, y: 1.62}
+  grilleOpacity:
+    m_OverrideState: 1
+    m_Value: 2
+  grilleCounterOpacity:
+    m_OverrideState: 0
+    m_Value: 0.79
+  grilleResolution:
+    m_OverrideState: 1
+    m_Value: 344.7
+  grilleCounterResolution:
+    m_OverrideState: 1
+    m_Value: -11.58
+  grilleUvRotation:
+    m_OverrideState: 0
+    m_Value: 87.4
+  grilleBrightness:
+    m_OverrideState: 1
+    m_Value: 1772.37
+  grilleUvMidPoint:
+    m_OverrideState: 0
+    m_Value: -11
+  grilleShift:
+    m_OverrideState: 0
+    m_Value: {x: 5.66, y: 1.14, z: 1}
