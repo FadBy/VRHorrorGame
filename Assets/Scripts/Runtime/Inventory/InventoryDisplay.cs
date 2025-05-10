@@ -30,6 +30,10 @@ public class InventoryDisplay : MonoBehaviour
     private void ClearSlots()
     {
         _displayedItems.Clear();
+        foreach (var slot in _slots)
+        {
+            Destroy(slot.gameObject);
+        }
         _slots.Clear();
     }
 

@@ -210,6 +210,37 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 127
+--- !u!1 &4397554956746365880
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6733683458571633541}
+  m_Layer: 0
+  m_Name: Anchor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6733683458571633541
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4397554956746365880}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.1224, y: 0, z: 0.0641}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6502740927226997745}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7566307730590904927
 GameObject:
   m_ObjectHideFlags: 0
@@ -510,6 +541,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8005498409711511396, guid: 36b8ae016353ca84a83153d2c63516a1, type: 3}
       insertIndex: 0
       addedObject: {fileID: 6423250478146556859}
+    - targetCorrespondingSourceObject: {fileID: -8005498409711511396, guid: 36b8ae016353ca84a83153d2c63516a1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6733683458571633541}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 36b8ae016353ca84a83153d2c63516a1, type: 3}
       insertIndex: -1
@@ -822,9 +856,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3630272c92cd4b84b8cd8d2a5f1add76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _anchor: {fileID: 6502740927226997745}
+  _anchor: {fileID: 6733683458571633541}
   _radius: 0.88
   _interactKey: 101
+  _initiallyInteractable: 1
+  _billboardPrefab: {fileID: 4869694096010871704, guid: 538ad777045c9314d8d90e0f6fdeb15a, type: 3}
   OnInteract:
     m_PersistentCalls:
       m_Calls:
@@ -1096,12 +1132,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+        m_TargetAssemblyTypeName: Interactable, Runtime
+        m_MethodName: Enable
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

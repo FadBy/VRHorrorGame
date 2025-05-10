@@ -49,6 +49,7 @@ public class PlayerCameraMovement : MonoBehaviour
     private void OnPlayerInput(InputAction.CallbackContext context)
     {
         if (CameraOffset is null) return;
+        if (Time.timeScale == 0) return;
         var mouseDelta = context.ReadValue<Vector2>();
         float yMouseDelta = -mouseDelta.y * Sensitivity.y;
         float xMouseDelta = mouseDelta.x * Sensitivity.x;

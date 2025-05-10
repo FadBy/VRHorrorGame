@@ -9,7 +9,8 @@ public class EndSequence : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            _animator.SetTrigger("Begin");  
+            _animator.SetTrigger("Begin");
+            AudioListener.volume = 0f;
         }
     }
 }

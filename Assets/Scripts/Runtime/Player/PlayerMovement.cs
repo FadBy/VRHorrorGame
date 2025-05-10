@@ -29,8 +29,6 @@ public class PlayerMovement : MonoBehaviour
     
     private void Update()
     {
-        var readWalk = ReadWalkInputAxis();
-        var inputSmoother = xVector2InputSmoother.Handle(ReadWalkInputAxis());
         var walkingVector = xVector2InputSmoother.Handle(ReadWalkInputAxis());
         SetWalkingDirection(walkingVector);
     }
@@ -56,6 +54,7 @@ public class PlayerMovement : MonoBehaviour
         var headDirection = headYRotation * new Vector3(_currentWalkingDirection.x, 0f, _currentWalkingDirection.y);
         
         _rb.velocity = WalkingSpeed * headDirection;
+        Debug.Log(_rb.velocity);
         
         var walkVector = time * WalkingSpeed * headDirection;
         LastWalkedDistance = walkVector.magnitude;

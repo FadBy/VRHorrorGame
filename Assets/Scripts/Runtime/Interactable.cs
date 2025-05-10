@@ -10,32 +10,53 @@ public class Interactable : MonoBehaviour
     [SerializeField] private float _radius = 1;
     [SerializeField] private KeyCode _interactKey;
     [SerializeField] private bool _initiallyInteractable = true;
+    [SerializeField] private GameObject _billboardPrefab;
+    [SerializeField] private float _billboardYOffset = 0.3f;
 
+    private GameObject _billboard;
+    
     public UnityEvent OnInteract;
     
     private PlayerMovement _playerMovement;
 
-    public bool Enabled { get; set; }
-    
+    private bool _enabled;
+
+    public bool Enabled
+    {
+        get => _enabled;
+        set
+        {
+            _enabled = value;
+            if (!_enabled)
+            {
+                _billboard.SetActive(false);
+            }
+        }
+    }
+
     [Inject]
     public void Construct(PlayerMovement playerMovement)
     {
-        Debug.Log("Interactable Injected");
         _playerMovement = playerMovement;
     }
 
     private void Awake()
     {
+        _billboard = Instantiate(_billboardPrefab, _anchor.transform.position + new Vector3(0f, _billboardYOffset, 0f), Quaternion.identity, transform);   
+        
         Enabled = _initiallyInteractable;
     }
 
     private void Update()
     {
         if (!Enabled) return;
+        if (_anchor == null) return;
+        _billboard.SetActive(IsPlayerInRadius());
         if (IsPlayerInRadius())
         {
             if (DidPlayerInteract())
             {
+                Disable();
                 OnInteract.Invoke();
             }
         }
