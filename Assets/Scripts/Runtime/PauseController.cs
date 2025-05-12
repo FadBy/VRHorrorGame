@@ -26,6 +26,7 @@ public class PauseController : MonoBehaviour
         Time.timeScale = 0;
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
+        AudioListener.pause = true;
     }
 
     public void Resume()
@@ -33,6 +34,7 @@ public class PauseController : MonoBehaviour
         Time.timeScale = 1;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+        AudioListener.pause = false;
     }
 
     public void Exit()

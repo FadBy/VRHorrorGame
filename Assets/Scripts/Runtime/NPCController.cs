@@ -11,8 +11,13 @@ public class NPCController : MonoBehaviour
     [SerializeField] private float _acceleration = 10f;
     [SerializeField] private float _fixingTime = 5;
     [SerializeField] private TVController _tvController;
+    [SerializeField] private BillBoard _billBoard;
+    [SerializeField] private AudioSource _audioSource;
+    [SerializeField] private AudioClip[] _footstepClips;
 
     private float _currentSpeed;
+
+    private Quaternion _initialRotation;
 
     public float CurrentSpeed
     {
@@ -32,12 +37,16 @@ public class NPCController : MonoBehaviour
 
     private IEnumerator FixingCoroutine()
     {
+        _initialRotation = transform.rotation;
+        _billBoard.Enabled = false;
         yield return FollowPath(false);
         _animator.SetTrigger("Fix");
         yield return new WaitForSeconds(_fixingTime);
         _tvController.Fix();
         yield return FollowPath(true);
-        
+        _billBoard.Enabled = true;
+        transform.rotation = _initialRotation;
+
     }
 
     private IEnumerator FollowPath(bool flip = false)
@@ -74,5 +83,13 @@ public class NPCController : MonoBehaviour
     {
         CurrentSpeed += acceleration * Time.deltaTime;
         CurrentSpeed = Mathf.Clamp(CurrentSpeed, 0f, _maxSpeed);
+    }
+
+    public void PlayFootstepSound()
+    {
+        if (_footstepClips.Length == 0 || _audioSource == null) return;
+
+        _audioSource.pitch = Random.Range(0.4f, 0.8f);
+        _audioSource.PlayOneShot(_footstepClips[Random.Range(0, _footstepClips.Length)]);
     }
 }

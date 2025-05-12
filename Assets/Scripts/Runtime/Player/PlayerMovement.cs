@@ -54,7 +54,6 @@ public class PlayerMovement : MonoBehaviour
         var headDirection = headYRotation * new Vector3(_currentWalkingDirection.x, 0f, _currentWalkingDirection.y);
         
         _rb.velocity = WalkingSpeed * headDirection;
-        Debug.Log(_rb.velocity);
         
         var walkVector = time * WalkingSpeed * headDirection;
         LastWalkedDistance = walkVector.magnitude;
